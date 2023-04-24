@@ -3,7 +3,7 @@ package src;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main{
+public class Main1{
     public static void main(String[] args) 
     {
         //System objects
@@ -22,13 +22,14 @@ public class Main{
         int healthPotionHealAmount = 30;
         int healthPotionDropChance = 50;        //Percentage
 
-        boolean running = true;
+        boolean running = true;     //Declaring a boolean value for main loop
         
         //Introduction Line
         System.out.println("\n\t\t!!! Welcome to the Dungeon !!!\n");
 
         //Start of the Game
 
+        //Main loop
         GAME:               //This is a 'GAME' label named to the while loop. So that we can iterate back when needed.
         while(running)      //This is the loop which will keep iterating to keep the game going.
         {
@@ -39,36 +40,43 @@ public class Main{
             String enemy = enemies[rand.nextInt(enemies.length)];
             System.out.println("\t#\tA "+ enemy + " has appeared!      #\n");
 
-            //
+            //Loop till the enemy's HP is 0 
             while(enemyHealth > 0)
             {
+                //Platform Details and Choices to play game
                 System.out.println("\t\tPlayer HP: " + health);
                 System.out.println("\t\t" + enemy + "'s HP: " + enemyHealth);
                 System.out.println("\n\tWhat would you like to do?");
-                System.out.println("\t 1. Attack!!!");
+                System.out.println("\t 1. ATTACK!!!");
                 System.out.println("\t 2. Drink Health Potion");
-                System.out.println("\t 3. Run! :( ");
+                System.out.println("\t 3. Evade! :| ");
 
+                //Taking Input from User and implementing accordingly
                 String input = in.nextLine();
                 if (input.equals("1")) 
                 {
-                    int damageDealt = rand.nextInt(attackDamage);
-                    int damageTaken = rand.nextInt(enemyAttackDamage);
+                    int damageDealt = rand.nextInt(attackDamage);       //Generating random attack damge of player
+                    int damageTaken = rand.nextInt(enemyAttackDamage);      //Generating random attack damge of enemy
 
+                    //Reducing both HPs accordingly
                     enemyHealth -= damageDealt;
                     health -= damageTaken;
 
+                    //Printing post-fight details
                     System.out.println("> You striked the "+enemy+" for "+damageDealt+" damage.");
                     System.out.println("> You received the "+damageTaken+" damage in retaliation.\n");
 
+                    //Breaking loop at Low Health alert
                     if (health < 1) 
                     {
-                     System.out.println("\t>You have taken too much damage, you are too weak to go on!"); 
-                     break;  
+                        System.out.print("\n\t\tLOW HEALTH\t\t\n");
+                        System.out.println(">You have taken too much damage, you are too weak to go on!"); 
+                        break;  
                     }
                 }
                 else if (input.equals("2")) 
                 {
+                    //Applying available Health Boost
                     if (numHealthPotions > 0) {
                         health += healthPotionHealAmount;
                         numHealthPotions--;
@@ -76,6 +84,7 @@ public class Main{
                         System.out.println("n\t> You now have "+health+" HP.");     //Printing Total HP
                         System.out.println("\n\t> You have "+numHealthPotions+" health potions left.\n");       //Printing Health Potions Left
                     }
+                    //Health Boost Unavailable
                     else
                     {
                         System.out.println("\n\t> You have no health potions left! \n\t>Defeat enemies for a chance to get one!!\n");       //Printing Health Potions Left
@@ -83,11 +92,13 @@ public class Main{
                 }
                 else if (input.equals("3")) 
                 {
-                    System.out.println("\n\t> You run away from the "+enemy+" !");
-                    continue GAME;
+                    //Printing Evade from enemy
+                    System.out.println("\n\t> You evaded away from the "+enemy+" !");
+                    continue GAME;          //recurses back to Main loop
                 }
                 else
                 {
+                    //Default for negating Invalid Input
                     System.out.println("\n\t    #       Invalid Command     #");
                 }
             }
@@ -116,12 +127,13 @@ public class Main{
             
             //Taking User's Choice in Input for continution 
             String input = in.nextLine();
-            while (!input.equals("1") && !input.equals("2")) //loop for negating Invalid Input
+            while (!input.equals("1") && !input.equals("2"))        //Loop for negating Invalid Input
             {
                 System.out.println("\n\t# Invalid Command #");
                 input = in.nextLine();
             }
 
+            //Implementing according to User's Input
             if (input.equals("1")) {
                 System.out.println("> You continue on your adventure.");
             }
