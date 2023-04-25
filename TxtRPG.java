@@ -132,7 +132,7 @@ public class TxtRPG
             System.out.println("\n\t#   You have "+health+" HP left !\t#");
             score += genscore;      //Incrensing Score
             System.out.println("\n\t#   Your Score is : "+score+"\t#\n");
-
+            
             //Health Potion Drop
             if (rand.nextInt(100) < healthPotionDropChance) {
                 numHealthPotions++;
@@ -141,6 +141,7 @@ public class TxtRPG
             }
             
             //Continuing the Game
+            System.out.println("\n\t#   Your Score is : "+score+"\t#\n");
             System.out.println("------------------------------------------------------------\n"); //Added dashed line for better UI
             System.out.println("\n\tWhat would you like to do now?");
             System.out.println("\t 1. Continue Fighting!");
@@ -160,6 +161,7 @@ public class TxtRPG
             }
             else if (input.equals("2")) {
                 System.out.println("> You exit the Dungeon, successfully from your adventures!!\n");
+                System.out.println("\n\t#   Your HighScore is : "+score+"\t#\n");
                 break;
             }
             }
