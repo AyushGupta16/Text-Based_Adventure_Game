@@ -128,10 +128,10 @@ public class TxtRPG
             // System.out.println("------------------------------------------------------------\n"); //Added dashed line for better UI
             
             //Printing Player's Stats
-            System.out.println("\n\t#       "+enemy+" was DEFEATED !!\t#");
-            System.out.println("\n\t#       You have "+health+" HP left !\t#");
+            System.out.println("\n\t#   "+enemy+" was DEFEATED !!\t#");
+            System.out.println("\n\t#   You have "+health+" HP left !\t#");
             score += genscore;      //Incrensing Score
-            System.out.println("\n\t#       Your Score is : "+score+"\t#\n");
+            System.out.println("\n\t#   Your Score is : "+score+"\t#\n");
 
             //Health Potion Drop
             if (rand.nextInt(100) < healthPotionDropChance) {
