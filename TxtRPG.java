@@ -10,7 +10,7 @@ public class TxtRPG
         Random rand = new Random();
         
         //Game variables
-        String[] enemies = {"Skeleton", "Zombie", "Lich", "Vampire", "Lamia"};
+        String[] enemies = {"Skeleton", "Zombie", "Lich", "Vampire", "Lamia", "Preta", "Banshee", "Dullahan", ""};
         int maxEnemyHealth =  75;
         int enemyAttackDamage = 25;
 
@@ -182,12 +182,13 @@ public class TxtRPG
         
         if (play == false ) 
         {
+            //Closure line 2
             System.out.println("\t\t#####################");
             System.out.println("\t\t# COME BACK AGAIN ! #");
             System.out.println("\t\t#####################");
             
         }
-        System.out.println("Press any key to continue..................................................................................");
+        System.out.println("Press Enter key to continue..................................................................................");
         in.nextLine();
         in.close();
     }    
