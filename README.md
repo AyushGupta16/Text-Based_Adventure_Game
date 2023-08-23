@@ -10,6 +10,8 @@ Text adventure games are a retro concept. Back then, graphics were much rarer fo
 
 Text-based adventure games, also known as interactive fiction, are a type of computer game where players navigate through a story using text commands. Instead of relying on graphics or audio, the game describes the environment and characters with written words, and the player types in their actions to progress through the game. 
 
+https://github.com/AyushGupta16/Text-Based_Adventure_Game/assets/97776010/545b9ed5-e18a-4ae7-a2f0-c49b5e860a22
+
 ### Functionalities:
 
 * Random Monsters will be appearing and the player must defeat the monster to proceed further in game .
